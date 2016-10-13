@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   $people = ['John', 'Tony', 'Noby'];
+   $pets = ['dog', 'cat', 'bird'];
+    return view('welcome', compact('people', 'pets'));
 });
 
 Route::get('/about', function () {
