@@ -11,12 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-   $people = ['John', 'Tony', 'Noby'];
-   $pets = ['dog', 'cat', 'bird'];
-    return view('welcome', compact('people', 'pets'));
-});
+Route::get('/', 'PagesController@home');
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', 'PagesController@about');
+
+// Route::get('/about', function () {
+//     return view('about');
+// });
