@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
+Route::get('/', 'HomeController@index');
+Route::get('/dashboard', 'PagesController@dashboard');
 
 Route::get('/about', 'PagesController@about');
 
@@ -23,3 +24,7 @@ Route::post('cards/{card}/notes', 'NotesController@store');
 
 Route::get('/notes/{note}/edit', 'NotesController@edit');
 Route::patch('notes/{note}', 'NotesController@update');
+
+
+
+Auth::routes();

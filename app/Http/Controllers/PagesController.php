@@ -4,13 +4,22 @@ namespace App\Http\Controllers;
 
 class PagesController extends Controller
 {
-    public function home()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-      $people = ['John', 'Tony', 'Noby'];
-      $pets = ['dog', 'cat', 'bird'];
-       return view('welcome', compact('people', 'pets'));
-
+        $this->middleware('auth');
     }
+
+    public function dashboard()
+    {
+      return view('home');
+    }
+
+
     public function about()
     {
 
