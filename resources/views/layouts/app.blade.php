@@ -79,6 +79,13 @@
             </div>
         </nav>
         <div class="container">
+          @if (Session::has('status'))
+            <div class="alert alert-{{ Session::get('alert_class') }}">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              {{ Session::get('status') }}
+            </div>
+          @endif
+
           @yield('content')
         </div>
     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Session;
 use Closure;
 
 class MustBeAdministrator
@@ -20,6 +21,9 @@ class MustBeAdministrator
       if($user && $user->email == 'n.fujioka@abacusmaths.info') {
         return $next($request);
       }
+
+      Session::flash('status', 'Sorry you cannot access the page.  You must be the administrator.');
+      Session::flash('alert_class', 'warning');
       return redirect('/dashboard');
       // abort(404, 'Sorry you cannot access this page. You must be the administrator.');
     }
