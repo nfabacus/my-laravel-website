@@ -2,6 +2,7 @@
 
 ## Project
 I am creating a website using the Laravel PHP framework.
+The original code is based on one of the Laracasts.
 
 ## About Laravel
 ```
